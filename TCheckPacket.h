@@ -17,11 +17,22 @@ map<MAC, Beacon_values>::iterator beacon_iter;
 map<CONV_MAC, Probe_values> probe_map;
 map<CONV_MAC, Probe_values>::iterator probe_iter;
 
+vector<pair<MAC,Beacon_values> > beacon_v;
+vector<pair<MAC,Beacon_values> > probe_v;
+
 MAC BROADCAST;
 
 void init(){
     memcpy(BROADCAST.mac,"\xFF\xFF\xFF\xFF\xFF\xFF", sizeof(BROADCAST.mac));
 }
+
+template<template <typename> class P = std::less >
+
+struct compare_pair_second {
+    template<class T1, class T2> bool operator()(const std::pair<T1,T2>&left, const std::pair<T1,T2>&right) {
+        return P<T2>()(left.second, right.second);
+    }
+};
 
 // check Type/Subtpye
 int check_packet_type(const unsigned char * data){
