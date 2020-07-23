@@ -69,7 +69,17 @@
       <x>20</x>
       <y>100</y>
       <width>621</width>
-      <height>491</height>
+      <height>161</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCustomPlot" name="qGraph" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>270</y>
+      <width>621</width>
+      <height>321</height>
      </rect>
     </property>
    </widget>
@@ -86,6 +96,14 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

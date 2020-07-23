@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <arpa/inet.h>
 #include <map>
+#include <unordered_map>
 #include <vector>
 #include <unistd.h>
 #include "TPacketData.h"
@@ -17,8 +18,10 @@ map<MAC, Beacon_values>::iterator beacon_iter;
 map<CONV_MAC, Probe_values> probe_map;
 map<CONV_MAC, Probe_values>::iterator probe_iter;
 
-vector<pair<MAC,Beacon_values> > beacon_v;
-vector<pair<MAC,Beacon_values> > probe_v;
+vector<pair<MAC,Beacon_values>> beacon_v;
+vector<pair<CONV_MAC,Probe_values>> probe_v;
+vector<pair<MAC,Beacon_values>>::iterator beacon_v_iter;
+vector<pair<CONV_MAC,Probe_values>>::iterator probe_v_iter;
 
 MAC BROADCAST;
 
